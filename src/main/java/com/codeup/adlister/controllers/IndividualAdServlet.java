@@ -1,14 +1,13 @@
 package com.codeup.adlister.controllers;
 
-import com.codeup.adlister.models.Ad;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+@WebServlet(name = "AdServlet", urlPatterns = "/individualAds")
 public class IndividualAdServlet extends HttpServlet {
     private Object price;
 
@@ -22,7 +21,7 @@ public class IndividualAdServlet extends HttpServlet {
         adId = String.valueOf(request.getServlet("adId"));
         Class<?> ad = AdService.getClass();
         request.setAttribute("ad", ad);
-        
+
         request.getRequestDispatcher("/jsp/individualAd.jsp").forward(req, resp);
     }
 }
