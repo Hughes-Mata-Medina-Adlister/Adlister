@@ -53,11 +53,14 @@
 </head>
 
 <script>
-    // JS to handle card click
-    function handleCardClick(url) {
-        // Redirect to the specified URL when the card is clicked
-        window.location.href = url;
-    }
+
+
+	// JS to handle card click
+	function handleCardClick(url) {
+		// Redirect to the specified URL when the card is clicked
+		window.location.href = url;
+	}
+
 </script>
 
 
@@ -84,4 +87,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script></body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 489a5aa (head.jsp, index.jsp)
