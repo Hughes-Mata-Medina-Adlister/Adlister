@@ -1,54 +1,68 @@
 package com.codeup.adlister.models;
-
-
 public class Ad {
-    private String description;
-    private String id;
-
+    private long id;
     private long userId;
-    private long title;
+    private String title;
+    private String description;
+    private String createTime;
 
-    public Ad(String description1) {
-        this.description = description1;
-    }
-
-    public Ad(long userId, long title) {
+    public Ad(long id, long userId, String title, String description) {
+        this.id = id;
         this.userId = userId;
         this.title = title;
-    }
-
-    public Ad(String title, String description, String postedBy, int price) {
         this.description = description;
     }
 
-    public Ad(long id, long userId, String title, String description) {
+    public Ad(long id, long userId, String title, String description, String createTime) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.createTime = createTime;
+    }
+
+    public Ad(long userId, String title, String description) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
     }
 
     public Ad(long id, String title) {
     }
 
-    public String getId() {
-        return id;
+    public Ad(String description) {
     }
 
-        public void setId(String id) {
-            this.id = id;
-        }
-
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public long getUserId() {
         return userId;
     }
-
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
     public String getTitle() {
-            return String.valueOf(title);
-        }
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-        public void setTitle(long title) {
-            this.title = title;
-        }
+    public String getCreateTime() {
+        return createTime;
+    }
 
-        public String getDescription() {
-            return (String) description;
-        }
-
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
 }
