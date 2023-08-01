@@ -53,16 +53,11 @@
 </head>
 
 <script>
-
-
-
-
 	// JS to handle card click
 	function handleCardClick(url) {
 		// Redirect to the specified URL when the card is clicked
 		window.location.href = url;
 	}
-
 </script>
 
 
@@ -76,7 +71,7 @@
         <c:forEach var="ad" items="${ads}">
             <div class="card-custom col-3">
                 <!-- Use onclick attribute to call the JavaScript function and pass the URL -->
-                <div class="" onclick="handleCardClick('/profile')">
+                <div class="" onclick="handleCardClick('/viewProfile')">
                     <div class="card-body">
                         <h5 class="card-title">${ad.title}</h5>
                         <p class="card-text">${ad.description}</p>
@@ -89,12 +84,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script></body>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 </html>
-=======
-</html>
->>>>>>> 489a5aa (head.jsp, index.jsp)
-=======
-</html>
->>>>>>> 489a5aa (head.jsp, index.jsp)
+
+
