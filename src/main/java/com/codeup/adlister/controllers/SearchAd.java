@@ -92,4 +92,3 @@ public class SearchAd extends HttpServlet {
      */
 
 }
-
