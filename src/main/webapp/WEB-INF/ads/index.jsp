@@ -31,6 +31,7 @@
         }
 
         .card-title {
+            margin-top:15px;
             font-size: large;
             align-content: center;
             display: flex;
@@ -63,18 +64,24 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+<script>
+    // JS to handle card click
+    function handleCardClick(url) {
+        // Redirect to the specified URL when the card is clicked
+        window.location.href = url;
+    }
+</script>
+
 <div class="container">
     <h1>All listings</h1>
 
     <div class="row">
         <c:forEach var="ad" items="${ads}">
-            <div class="card-custom col-3">
-                <!-- Use onclick attribute to call the JavaScript function and pass the URL -->
-                <div class="" onclick="handleCardClick('/viewProfile')">
-                    <div class="card-body">
-                        <h5 class="card-title">${ad.title}</h5>
-                        <p class="card-text">${ad.description}</p>
-                    </div>
+            <!-- Use onclick attribute to call the JavaScript function and pass the URL -->
+            <div class="card-custom col-3" onclick="handleCardClick('/ad?adId=${ad.id}')">
+                <div class="card-body">
+                    <h5 class="card-title">${ad.title}</h5>
+                    <p class="card-text">${ad.description}</p>
                 </div>
             </div>
         </c:forEach>
