@@ -76,4 +76,10 @@ public class SearchAd extends HttpServlet {
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
+<<<<<<< HEAD
 }
+=======
+
+}
+
+>>>>>>> 412475fa1f1db4eb7d76375bc9b93416a82b8b20
