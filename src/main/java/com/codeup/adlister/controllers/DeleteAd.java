@@ -39,3 +39,9 @@ public class DeleteAd extends HttpServlet {
         }
     }
 }
+
+
+
+
+
+
