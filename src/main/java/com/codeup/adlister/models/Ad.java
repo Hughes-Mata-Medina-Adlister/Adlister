@@ -1,53 +1,54 @@
 package com.codeup.adlister.models;
 
+
 public class Ad {
-    private long id;
-    private long userId;
-    private String title;
     private String description;
+    private String id;
+
+    private long userId;
+    private long title;
+
+    public Ad(String description1) {
+        this.description = description1;
+    }
+
+    public Ad(long userId, long title) {
+        this.userId = userId;
+        this.title = title;
+    }
+
+    public Ad(String title, String description, String postedBy, int price) {
+        this.description = description;
+    }
 
     public Ad(long id, long userId, String title, String description) {
-        this.id = id;
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
     }
 
-    public Ad(long userId, String title, String description) {
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
+    public Ad(long id, String title) {
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+        public void setId(String id) {
+            this.id = id;
+        }
 
     public long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
     public String getTitle() {
-        return title;
-    }
+            return String.valueOf(title);
+        }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+        public void setTitle(long title) {
+            this.title = title;
+        }
 
-    public String getDescription() {
-        return description;
-    }
+        public String getDescription() {
+            return (String) description;
+        }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
