@@ -69,9 +69,8 @@
 
     <div class="row">
         <c:forEach var="ad" items="${ads}">
-            <div class="card-custom col-3">
-                <!-- Use onclick attribute to call the JavaScript function and pass the URL -->
-                <div class="" onclick="handleCardClick('/profile')">
+            <div onclick="handleCardClick('/profile')"> <!-- Use onclick attribute to call the JavaScript function and pass the URL -->
+                <div class="card-custom col-3">
                     <div class="card-body">
                         <h5 class="card-title">${ad.title}</h5>
                         <p class="card-text">${ad.description}</p>
