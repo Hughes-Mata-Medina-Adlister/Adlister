@@ -53,6 +53,7 @@
 
     </style>
 </head>
+
 <body>
 <nav class="custom-navbar">
     <!-- Title -->

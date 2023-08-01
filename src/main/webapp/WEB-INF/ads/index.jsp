@@ -25,8 +25,8 @@
         }
 
         .card-custom:hover {
-            transform: scale(1.15); /* Scale the card on hover by 15% */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase the shadow on hover */
+            transform: scale(1.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
 
