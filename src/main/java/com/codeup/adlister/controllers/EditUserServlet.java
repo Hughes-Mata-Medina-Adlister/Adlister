@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import static com.codeup.adlister.dao.DaoFactory.getUsersDao;
 
 @WebServlet(name = "EditUserServlet", urlPatterns = "/userEdit")
 public class EditUserServlet extends HttpServlet {
@@ -26,15 +27,15 @@ public class EditUserServlet extends HttpServlet {
         // validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty()
-                || ((DaoFactory.getUsersDao().findByUsername(username) != null)
-                && (DaoFactory.getUsersDao().findByUsername(username).getId() != user.getId()));
+                || ((getUsersDao().findByUsername(username) != null)
+                && (getUsersDao().findByUsername(username).getId() != user.getId()));
         if (inputHasErrors) {
             response.sendRedirect("/profile");
             return;
         }
         user.setUsername(username);
         user.setEmail(email);
-        DaoFactory.getUsersDao().update(user);
+        getUsersDao().update(user);
         response.sendRedirect("/profile");
     }
 }

@@ -58,5 +58,9 @@ public class User<s> {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    public Object getRole() {
+        return null;
+    }
 }
 

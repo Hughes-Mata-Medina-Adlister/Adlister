@@ -6,5 +6,7 @@ public interface Users {
     User findByUsername(String username);
 
 
-    void insert(User user);
+    Long insert(User user);
+
+    void update(User user);
 }

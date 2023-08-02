@@ -19,6 +19,15 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
+    /**
+     * @param id
+     * @return
+     */
+    @Override
+    public Object getAdById(int id) {
+        return null;
+    }
+
     private List<Ad> generateAds() {
         return generateAds(null);
     }
