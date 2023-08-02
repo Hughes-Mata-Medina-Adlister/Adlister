@@ -75,6 +75,9 @@
                 <c:if test="${not fn:contains(pageContext.request.requestURI, '/ads/create')}">
                     <a class="nav-btn btn btn-success" href="/ads/create">Create</a>
                 </c:if>
+                <c:if test="${not fn:contains(pageContext.request.requestURI, '/ads/delete')}">
+                    <a class="nav-btn btn btn-danger" href="/ads/delete">Delete</a>
+                </c:if>
                 <a class="nav-btn btn btn-danger" href="/logout">Logout</a>
             </c:when>
             <c:otherwise>

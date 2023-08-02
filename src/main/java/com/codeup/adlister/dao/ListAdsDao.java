@@ -19,6 +19,11 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
+    @Override
+    public void deleteAd(long id) {
+
+    }
+
     private List<Ad> generateAds() {
         return generateAds(null);
     }

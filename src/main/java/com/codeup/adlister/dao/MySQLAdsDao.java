@@ -70,4 +70,39 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    public void deleteAd(long id) {
+        try {
+            String sql = "DELETE FROM ads WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1, id);
+            int rowsDeleted = statement.executeUpdate();
+            if (rowsDeleted > 0) {
+                System.out.println("A Ad was deleted successfully!");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public List<Ad> searchAd(String keyword) {
+        List<Ad> ads = new ArrayList<>();
+        try  {
+            String sql = "SELECT * FROM ads WHERE title LIKE ? OR description LIKE ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, "%" + keyword + "%");
+            statement.setString(2, "%" + keyword + "%");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Ad ad = new Ad();
+                ad.setId(resultSet.getInt("id"));
+                ad.setTitle(resultSet.getString("title"));
+                ad.setDescription(resultSet.getString("description"));
+                ads.add(ad);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ads;
+    }
 }

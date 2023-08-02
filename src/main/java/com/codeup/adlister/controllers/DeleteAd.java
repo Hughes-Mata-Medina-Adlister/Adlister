@@ -1,35 +1,36 @@
 package com.codeup.adlister.controllers;
+import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.util.List;
+
+@WebServlet(name = "controllers.DeleteServlet", urlPatterns = "/ads/delete")
 public class DeleteAd extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        String id = request.getParameter("id");
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+        List<Ad> ads = DaoFactory.getAdsDao().all();
+        req.setAttribute("ads/delete", ads);
+
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String user = "root";
-            String pass = "root";
-            String query = "delete from adlister_db where id=?";
-            Connection con = DriverManager.getConnection("jdbc:mysql://locahost:8080/ads", user, pass);
-            PreparedStatement ps = con.prepareStatement("delete from adlister_db where id=?");
-            ps.setString(1, id);
-            int i = ps.executeUpdate();
-            if (i > 0) {
-                out.println("Ad successfully removed...");
-            }
-        } catch (Exception e) {
-            System.out.println(e);
+            req.getRequestDispatcher("/WEB-INF/ads/delete.jsp").forward(req, resp);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
         }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+       long id = Long.parseLong(request.getParameter("post-id"));
+        DaoFactory.getAdsDao().deleteAd(id);
+        response.sendRedirect("/ads");
     }
 }
 

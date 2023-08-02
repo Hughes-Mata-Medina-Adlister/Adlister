@@ -27,7 +27,8 @@ public class Ad {
         this.description = description;
     }
 
-    public Ad(long id, String title) {
+    public Ad() {
+
     }
 
     public Ad(String description) {
