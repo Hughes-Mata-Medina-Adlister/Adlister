@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet(name = "FormServlet", urlPatterns = "/form")
 public class FormServlet extends HttpServlet {
-    private User userData;
+    private final User userData;
 
     public FormServlet(User userData) {
         this.userData = userData;

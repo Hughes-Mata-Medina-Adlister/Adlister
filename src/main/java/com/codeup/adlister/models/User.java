@@ -5,8 +5,10 @@ public class User<s> {
     private String username;
     private String email;
     private String password;
+    private String errorMessage;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String username, String email, String password) {
         this.username = username;
@@ -52,4 +54,9 @@ public class User<s> {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
 }
+
