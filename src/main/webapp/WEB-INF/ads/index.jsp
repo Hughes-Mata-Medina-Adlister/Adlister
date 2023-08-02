@@ -54,8 +54,11 @@
 
 <script>
 
-
-
+    // JS to handle card click
+    function handleCardClick(url) {
+        // Redirect to the specified URL when the card is clicked
+        window.location.href = url;
+    }
 
 	// JS to handle card click
 	function handleCardClick(url) {
@@ -64,7 +67,6 @@
 	}
 
 </script>
-
 
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -76,7 +78,7 @@
         <c:forEach var="ad" items="${ads}">
             <div class="card-custom col-3">
                 <!-- Use onclick attribute to call the JavaScript function and pass the URL -->
-                <div class="" onclick="handleCardClick('/profile')">
+                <div class="" onclick="handleCardClick('/viewProfile')">
                     <div class="card-body">
                         <h5 class="card-title">${ad.title}</h5>
                         <p class="card-text">${ad.description}</p>
@@ -87,14 +89,14 @@
     </div>
 </div>
 
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script></body>
 
-
-</html>
-
-
-
-
-
+<html>
 

@@ -51,6 +51,20 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public boolean usernameExists(String username) {
+        try {
+            String query = "SELECT id FROM users WHERE username = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -62,5 +76,4 @@ public class MySQLUsersDao implements Users {
             rs.getString("password")
         );
     }
-
 }
