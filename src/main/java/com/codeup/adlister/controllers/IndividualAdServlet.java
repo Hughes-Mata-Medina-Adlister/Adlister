@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@WebServlet(name = "AdServlet", urlPatterns = "/individualAds")
+@WebServlet(name = "AdServlet", urlPatterns = "/Ad")
 public class IndividualAdServlet extends HttpServlet {
     private Object price;
 
