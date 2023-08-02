@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>Register</title>
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
@@ -28,6 +29,17 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
+        <form method="post" action="register">
+            <label>Username:</label>
+            <input type="text" name="username"><br>
+
+            <label>Email:</label>
+            <input type="email" name="email"><br>
+
+            <input type="submit" value="Register">
+        </form>
+        <%--Displaythe error message --%>
+        <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
     </div>
 </body>
 </html>
