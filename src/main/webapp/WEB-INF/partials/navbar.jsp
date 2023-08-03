@@ -9,16 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <style>
-        @media (max-width: 991px) {
-            .navbar-nav {
-                display: flex;
-                justify-content: flex-end;
-                margin-right: 0;
-            }
-            .nav-item {
-                margin: 0 10px;
-            }
-        }
 
         .custom-navbar{
             background-color: lightblue;
@@ -51,21 +41,15 @@
             font-size: x-large;
             margin: 0 5px;
         }
-
-        /*.search-box{*/
-        /*    text-align: center;*/
-        /*    height: 50px;*/
-        /*}*/
-        /*.search-button{*/
-        /*}*/
     </style>
+
 </head>
 
 <body>
 <nav class="custom-navbar">
     <!-- Title -->
     <div>
-        <a class="custom-navbar-left" href="/index.jsp">
+        <a class="custom-navbar-left title" href="/index.jsp">
             Adlister
         </a>
     </div>
