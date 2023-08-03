@@ -23,4 +23,10 @@ public class AdServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String keyword = String.valueOf(Long.parseLong(request.getParameter("post-search")));
+        DaoFactory.getAdsDao().searchAd(keyword);
+        response.sendRedirect("/ads");
+    }
 }

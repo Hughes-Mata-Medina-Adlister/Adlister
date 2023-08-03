@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListAdsDao implements Ads {
+public abstract class ListAdsDao implements Ads {
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -19,9 +19,10 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
-    @Override
-    public void deleteAd(long id) {
 
+
+    @Override
+    public void searchAd(String title) {
     }
 
     private List<Ad> generateAds() {

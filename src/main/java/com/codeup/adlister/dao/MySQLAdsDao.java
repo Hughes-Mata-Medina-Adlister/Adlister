@@ -2,9 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,11 +69,12 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-    public void deleteAd(long id) {
+    public void deleteAd(long id, long user_id) {
         try {
-            String sql = "DELETE FROM ads WHERE id = ?";
+            String sql = "DELETE FROM ads WHERE id = ? AND user_id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, id);
+            statement.setLong(1, user_id);
             int rowsDeleted = statement.executeUpdate();
             if (rowsDeleted > 0) {
                 System.out.println("A Ad was deleted successfully!");
@@ -85,7 +84,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public List<Ad> searchAd(String keyword) {
+    public void searchAd(String keyword) {
         List<Ad> ads = new ArrayList<>();
         try  {
             String sql = "SELECT * FROM ads WHERE title LIKE ? OR description LIKE ?";
@@ -103,6 +102,5 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return ads;
     }
 }

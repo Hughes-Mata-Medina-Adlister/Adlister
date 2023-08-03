@@ -17,6 +17,8 @@
 <body>
 <h1>Ads</h1>
 
+
+
 <table>
     <tr>
         <th>Title</th>
@@ -29,6 +31,8 @@
         </tr>
     </c:forEach>
 </table>
+
+
 </body>
 </html>"
 

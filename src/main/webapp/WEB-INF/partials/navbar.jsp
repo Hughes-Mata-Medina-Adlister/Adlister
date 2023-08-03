@@ -67,9 +67,17 @@
         <c:choose>
             <c:when test="${user != null}">
                 <c:if test="${not fn:contains(pageContext.request.requestURI, '/profile')}">
+                    <form class="form-inline">
+                        <input name="post-search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                     <a class="nav-btn btn btn-primary" href="/profile">Profile</a>
                 </c:if>
                 <c:if test="${not fn:contains(pageContext.request.requestURI, '/ads')}">
+                    <form name="post-search" class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                     <a class="nav-btn btn btn-primary" href="/ads">Ads</a>
                 </c:if>
                 <c:if test="${not fn:contains(pageContext.request.requestURI, '/ads/create')}">
