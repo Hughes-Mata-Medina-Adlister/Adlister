@@ -58,13 +58,13 @@
                     <img src="https://picsum.photos/600/400">
                 </div>
                 <div class="image small-image">
-                    <img src="https://picsum.photos/60/40" class="icon">
-                    <img src="https://picsum.photos/60/40" class="icon">
-                    <img src="https://picsum.photos/60/40" class="icon">
-                    <img src="https://picsum.photos/60/40" class="icon">
-                    <img src="https://picsum.photos/60/40" class="icon">
-                    <img src="https://picsum.photos/60/40" class="icon">
-                    <img src="https://picsum.photos/60/40" class="icon">
+                    <img src="https://picsum.photos/60/40?random=1" class="icon">
+                    <img src="https://picsum.photos/60/40?random=2" class="icon">
+                    <img src="https://picsum.photos/60/40?random=3" class="icon">
+                    <img src="https://picsum.photos/60/40?random=4" class="icon">
+                    <img src="https://picsum.photos/60/40?random=5" class="icon">
+                    <img src="https://picsum.photos/60/40?random=6" class="icon">
+                    <img src="https://picsum.photos/60/40?random=7" class="icon">
                 </div>
                 <div class="description">
                     <h3>${ad.description}</h3>

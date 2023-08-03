@@ -1,10 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <head>
-    <title>${param.title}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
@@ -26,32 +22,32 @@
     <h1>Please fill in your information.</h1>
     <% if (request.getAttribute("usernameTaken") != null && (boolean) request.getAttribute("usernameTaken")) { %>
         <div class="alert alert-danger" role="alert" id="alertMessage">
-            Username is already taken. Please choose a different username.
+            Username is already taken! Please choose a different username.
         </div>
     <% } %>
 
     <form action="/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" name="username" class="form-control" type="text">
+            <input id="username" name="username" class="form-control" type="text" value="${empty requestScope.username ? '' : requestScope.username}" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" class="form-control" type="text">
+            <input id="email" name="email" class="form-control" type="text" value="${empty requestScope.email ? '' : requestScope.email}" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input id="password" name="password" class="form-control" type="password">
+            <input id="password" name="password" class="form-control" type="password" required>
         </div>
         <div class="form-group">
             <label for="confirm_password">Confirm Password</label>
-            <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+            <input id="confirm_password" name="confirm_password" class="form-control" type="password" required>
         </div>
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
 
-<!-- JavaScript to handle displaying the alert if username is take -->
+<!-- JavaScript to handle displaying the alert if username is taken -->
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
