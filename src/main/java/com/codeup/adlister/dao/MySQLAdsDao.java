@@ -74,7 +74,7 @@ public class MySQLAdsDao implements Ads {
             String sql = "DELETE FROM ads WHERE id = ? AND user_id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, id);
-            statement.setLong(1, user_id);
+            statement.setLong(2, user_id);
             int rowsDeleted = statement.executeUpdate();
             if (rowsDeleted > 0) {
                 System.out.println("A Ad was deleted successfully!");
@@ -84,7 +84,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public void searchAd(String keyword) {
+    public List<Ad> searchAd(String keyword) {
         List<Ad> ads = new ArrayList<>();
         try  {
             String sql = "SELECT * FROM ads WHERE title LIKE ? OR description LIKE ?";
@@ -102,5 +102,6 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return ads;
     }
 }

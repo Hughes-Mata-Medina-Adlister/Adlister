@@ -22,7 +22,8 @@ public abstract class ListAdsDao implements Ads {
 
 
     @Override
-    public void searchAd(String title) {
+    public List<Ad> searchAd(String title) {
+        return null;
     }
 
     private List<Ad> generateAds() {

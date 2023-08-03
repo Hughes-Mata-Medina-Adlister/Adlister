@@ -29,7 +29,8 @@ public class DeleteAd extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
        long id = Long.parseLong(request.getParameter("post-id"));
-        long user_id = Long.parseLong(request.getParameter("post-id"));
+        User user = (User) request.getSession().getAttribute("user");
+        long user_id = user.getId();
         DaoFactory.getAdsDao().deleteAd(id, user_id);
         response.sendRedirect("/ads");
     }
