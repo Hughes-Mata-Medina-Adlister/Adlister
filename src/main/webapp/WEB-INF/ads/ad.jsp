@@ -1,11 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: xavier
-  Date: 8/1/23
-  Time: 15:14
+  Date: 8/3/23
+  Time: 11:56
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>${ad.title}</title>
@@ -42,6 +44,7 @@
         .icon{
             margin: 20px 15px 30px 15px;
         }
+
     </style>
 </head>
 <body>
@@ -71,11 +74,24 @@
                 </div>
                 <div>
                     <h6 class="username">Posted by: ${user.username}</h6>
-                    <c:if test="${sessionScope.user != null && ad.userId == sessionScope.user.id}">
-                        <div>
-                            <a href="/ads/edit?id=${ad.id}" class="btn btn-primary">Edit</a>
-                        </div>
-                    </c:if>
+
+                    <div>
+                        <p>Categories:</p>
+                        <c:forEach items="${categories}" var="category">
+                            <p>${category}</p>
+                        </c:forEach>
+                    </div>
+
+                    <c:choose>
+                        <c:when test="${sessionScope.user != null && ad.userId == sessionScope.user.id}">
+                            <div>
+                                <a href="/ads/edit?id=${ad.id}" class="btn btn-primary">Edit</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <!-- If the conditions are not met, show an empty div or handle it accordingly -->
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </div>

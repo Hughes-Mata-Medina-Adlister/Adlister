@@ -95,19 +95,16 @@
     <h1 class="all">Main page</h1>
 
     <div class="row d-flex justify-content-center">
-        <c:forEach var="ad" items="${ads}">
-            <!-- Card content -->
-            <div class="card-custom col-md-3 col-sm-6" onclick="handleCardClick('/ad?adId=${ad.id}')">
-                <div class="card-body">
-                    <p class="card-title card-header">${ad.title}</p>
-                    <div class="icon">
-                        <img src="https://picsum.photos/240/160?random=${ad.id}" class="icon">
-                    </div>
-                    <p class="card-text">${ad.description}</p>
-                </div>
-            </div>
-        </c:forEach>
-
+        <h1>Codeup Adlister Project</h1>
+        <div>
+            <h2>Specifications</h2>
+            <ul>
+                <li>Users sign up for the site with an email and password</li>
+                <li>Users create ads with a title and description and category.</li>
+                <li>Each ad is associated with the user that created it.</li>
+                <li>An ad can be in one or more categories (for example, "help wanted", "giveaway", or "furniture")</li>
+            </ul>
+        </div>
     </div>
 </div>
 </ul>

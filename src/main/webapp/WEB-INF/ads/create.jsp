@@ -47,6 +47,19 @@
             <textarea id="description" name="description" class="form-control description" rows="5" required>${empty requestScope.description ? '' : requestScope.description}</textarea>
         </div>
 
+        <div class="form-group">
+            <label for="categories">Categories</label><br>
+            <input type="checkbox" id="category1" name="categories" value="Clothing">
+            <label for="category1">Clothing</label><br>
+            <input type="checkbox" id="category2" name="categories" value="Electronics">
+            <label for="category2">Electronics</label><br>
+            <input type="checkbox" id="category3" name="categories" value="Vehicles">
+            <label for="category3">Vehicles</label><br>
+            <input type="checkbox" id="category4" name="categories" value="Tools">
+            <label for="category4">Tools</label><br>
+            <!-- Add more checkboxes for other possible categories if needed -->
+        </div>
+
         <input type="submit" class="btn btn-block btn-primary" value="Create Ad">
     </form>
 </div>
