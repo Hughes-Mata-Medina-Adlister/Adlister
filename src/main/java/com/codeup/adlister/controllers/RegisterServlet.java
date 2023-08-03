@@ -32,7 +32,10 @@ public class RegisterServlet extends HttpServlet {
                 || DaoFactory.getUsersDao().usernameExists(username); // Check if the username already exists, needed for alert
 
         if (inputHasErrors) {
-            // set the "usernameTaken" attribute to true if the username already exists so alert can respond
+            // Store the submitted form data in the request attributes
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
+
             request.setAttribute("usernameTaken", DaoFactory.getUsersDao().usernameExists(username));
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             return;
@@ -48,7 +51,4 @@ public class RegisterServlet extends HttpServlet {
         DaoFactory.getUsersDao().insert(user);
         response.sendRedirect("/login");
     }
-
-
-
 }

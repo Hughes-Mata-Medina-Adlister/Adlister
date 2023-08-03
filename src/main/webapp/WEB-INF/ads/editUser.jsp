@@ -1,34 +1,32 @@
 <%--
   Created by IntelliJ IDEA.
-  User: snowbunny
-  Date: 8/1/23
-  Time: 6:34 PM
+  User: xavier
+  Date: 8/3/23
+  Time: 11:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Form Submission</title>
+  <jsp:include page="/WEB-INF/partials/head.jsp">
+    <jsp:param name="title" value="Edit Profile" />
+  </jsp:include>
 </head>
 <body>
-<form action="submitForm" method="post">
-    Username: <input type="text" name="username"><br>
-    <%-- Display username error message if it exists --%>
-    <c:if test="${not empty userData.usernameError}">
-        <p style="color: red">${userData.usernameError}</p>
-    </c:if>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-    Email: <input type="text" name="email"><br>
-    <%-- Display email error message if it exists --%>
-    <c:if test="${not empty userData.emailError}">
-        <p style="color: red">${userData.emailError}</p>
-    </c:if>
+<div class="container">
+  <h1>Edit Your Profile</h1>
+  <form action="/profile/edit" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="${sessionScope.user.username}" required><br>
 
-    <!-- Add other form fields and their corresponding error messages as needed -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="${sessionScope.user.email}" required><br>
 
-    <input type="submit" value="Submit">
-</form>
+    <input type="submit" value="Save">
+  </form>
+</div>
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
@@ -37,5 +35,3 @@
 
 </body>
 </html>
-
-

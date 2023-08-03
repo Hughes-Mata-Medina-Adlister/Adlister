@@ -14,10 +14,11 @@ import static com.codeup.adlister.dao.DaoFactory.getAdsDao;
 
 @WebServlet (name = "EditAdServlet", urlPatterns = "/ads/edit")
 public class EditAdServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
-        Ad ad = (Ad) getAdsDao().getAdById(id);
+        Ad ad = getAdsDao().findById(id);
         User user = (User) req.getSession().getAttribute("user");
         if (user == null) {
             resp.sendRedirect("/ads");
@@ -25,17 +26,22 @@ public class EditAdServlet extends HttpServlet {
         }
         if (ad.getUserId() == user.getId()) {
             req.getSession().setAttribute("ad", ad);
-            req.getSession().setAttribute("categories", getAdsDao().all());
-            req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/ads/editAd.jsp").forward(req, resp);
+        } else {
+            resp.sendRedirect("/ads");
         }
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Ad ad = (Ad) request.getSession().getAttribute("ad");
         String title = request.getParameter("title");
         String description = request.getParameter("description");
+
         ad.setTitle(title);
         ad.setDescription(description);
+
+        getAdsDao().update(ad);
+
         response.sendRedirect("/ads");
     }
 }
-

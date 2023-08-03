@@ -12,10 +12,10 @@
 <head>
 
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Adlister" />
+        <jsp:param name="title" value="Search results" />
     </jsp:include>
 
-    <title>Main Page</title>
+    <title>Search Results</title>
 
     <style>
 
@@ -92,7 +92,7 @@
 </script>
 
 <div class="container">
-    <h1 class="all">Main page</h1>
+    <h1 class="all">Search results</h1>
 
     <div class="row d-flex justify-content-center">
         <c:forEach var="ad" items="${ads}">
