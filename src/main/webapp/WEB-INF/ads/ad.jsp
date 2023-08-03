@@ -78,7 +78,7 @@
                     <div>
                         <p>Categories:</p>
                         <c:forEach items="${categories}" var="category">
-                            <p>${category}</p>
+                            ${category}
                         </c:forEach>
                     </div>
 

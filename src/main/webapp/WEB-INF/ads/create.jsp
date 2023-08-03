@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <label for="categories">Categories</label><br>
+            <%--@declare id="categories"--%><label for="categories">Categories</label><br>
             <input type="checkbox" id="category1" name="categories" value="Clothing">
             <label for="category1">Clothing</label><br>
             <input type="checkbox" id="category2" name="categories" value="Electronics">
@@ -57,7 +57,20 @@
             <label for="category3">Vehicles</label><br>
             <input type="checkbox" id="category4" name="categories" value="Tools">
             <label for="category4">Tools</label><br>
-            <!-- Add more checkboxes for other possible categories if needed -->
+            <input type="checkbox" id="category5" name="categories" value="Furniture">
+            <label for="category5">Furniture</label><br>
+            <input type="checkbox" id="category6" name="categories" value="Appliances">
+            <label for="category6">Appliances</label><br>
+            <input type="checkbox" id="category7" name="categories" value="Toys & Games">
+            <label for="category7">Toys & Games</label><br>
+            <input type="checkbox" id="category8" name="categories" value="Books & Magazines">
+            <label for="category8">Books & Magazines</label><br>
+            <input type="checkbox" id="category9" name="categories" value="Sports Equipment">
+            <label for="category9">Sports Equipment</label><br>
+            <input type="checkbox" id="category10" name="categories" value="Home & Garden">
+            <label for="category10">Home & Garden</label><br>
+            <input type="checkbox" id="category11" name="categories" value="Other">
+            <label for="category11">Other</label><br>
         </div>
 
         <input type="submit" class="btn btn-block btn-primary" value="Create Ad">

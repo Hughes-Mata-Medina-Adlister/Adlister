@@ -92,7 +92,6 @@
 </script>
 
 <div class="container">
-    <h1 class="all">Main page</h1>
 
     <div class="row d-flex justify-content-center">
         <h1>Codeup Adlister Project</h1>
