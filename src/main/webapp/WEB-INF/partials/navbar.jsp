@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <style>
-
         .custom-navbar{
             background-color: lightblue;
             display: flex;
@@ -49,7 +48,7 @@
 <nav class="custom-navbar">
     <!-- Title -->
     <div>
-        <a class="custom-navbar-left title" href="/index.jsp">
+        <a class="custom-navbar-left title" href="/ads">
             Adlister
         </a>
     </div>
@@ -63,7 +62,6 @@
                 <form action="/SearchAd" method="post">
                     <div class="input-group">
                         <input class="search-box form-control" type="search" placeholder="Enter a keyword" aria-label="Search" name="search">
-                        <!-- Add input group append to align the button with the search box -->
                         <div class="input-group-append">
                             <button class="search-button nav-btn btn btn-primary" type="submit">Search</button>
                         </div>

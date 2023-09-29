@@ -5,13 +5,22 @@
   Time: 11:07
   To change this template use File | Settings | File Templates.
 --%>
+<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
   <jsp:include page="/WEB-INF/partials/head.jsp">
-    <jsp:param name="title" value="Edit Profile" />
+    <jsp:param name="title" value="User profile" />
   </jsp:include>
+
+  <style>
+
+  </style>
+
 </head>
+
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
@@ -24,7 +33,7 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" value="${sessionScope.user.email}" required><br>
 
-    <input type="submit" value="Save">
+    <input class="btn btn-block btn-primary" type="submit" value="Save">
   </form>
 </div>
 

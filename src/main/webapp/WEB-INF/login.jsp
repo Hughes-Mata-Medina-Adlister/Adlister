@@ -17,11 +17,6 @@
 
     <title>Please log in</title>
 
-    <style>
-    .password{
-        margin-bottom: 15px;
-    }
-    </style>
 
 </head>
 <body>

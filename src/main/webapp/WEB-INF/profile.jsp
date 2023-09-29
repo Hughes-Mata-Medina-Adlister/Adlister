@@ -8,10 +8,6 @@
         <jsp:param name="title" value="User profile" />
     </jsp:include>
 
-    <style>
-
-    </style>
-
 </head>
 
 <body>

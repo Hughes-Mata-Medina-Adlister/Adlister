@@ -9,14 +9,6 @@
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
 
-    <style>
-        .form-box{
-            margin-top: 50px;
-        }
-        .btn{
-            margin: 15px;
-        }
-    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />

@@ -79,6 +79,7 @@
         }
     </style>
 
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -93,18 +94,18 @@
 
 <div class="container">
 
-    <div class="row d-flex justify-content-center">
-        <h1>Codeup Adlister Project</h1>
-        <div>
-            <h2>Specifications</h2>
-            <ul>
-                <li>Users sign up for the site with an email and password</li>
-                <li>Users create ads with a title and description and category.</li>
-                <li>Each ad is associated with the user that created it.</li>
-                <li>An ad can be in one or more categories (for example, "help wanted", "giveaway", or "furniture")</li>
-            </ul>
-        </div>
-    </div>
+<%--    <div class="row d-flex justify-content-center">--%>
+<%--        <h1>Codeup Adlister Project</h1>--%>
+<%--        <div>--%>
+<%--            <h2>Specifications</h2>--%>
+<%--            <ul>--%>
+<%--                <li>Users sign up for the site with an email and password</li>--%>
+<%--                <li>Users create ads with a title and description and category.</li>--%>
+<%--                <li>Each ad is associated with the user that created it.</li>--%>
+<%--                <li>An ad can be in one or more categories (for example, "help wanted", "giveaway", or "furniture")</li>--%>
+<%--            </ul>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 </div>
 </ul>
 </body>
