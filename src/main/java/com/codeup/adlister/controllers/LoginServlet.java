@@ -32,12 +32,31 @@ public class LoginServlet extends HttpServlet {
 
             request.setAttribute("loginError", true);
             request.setAttribute("username", username);
+
+        if (user == null) {
+            // Store the entered username in the request attribute
+            request.setAttribute("username", username);
+            request.setAttribute("loginError", true);
+
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             return;
         }
 
+
         request.getSession().setAttribute("user", user);
         response.sendRedirect("/profile");
+
+        boolean validAttempt = Password.check(password, user.getPassword());
+
+        if (validAttempt) {
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("/profile");
+        } else {
+            request.setAttribute("username", username);
+            request.setAttribute("loginError", true);
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        }
+
     }
 
 }

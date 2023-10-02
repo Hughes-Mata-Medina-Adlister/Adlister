@@ -9,17 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <style>
-        @media (max-width: 991px) {
-            .navbar-nav {
-                display: flex;
-                justify-content: flex-end;
-                margin-right: 0;
-            }
-            .nav-item {
-                margin: 0 10px;
-            }
-        }
-
         .custom-navbar{
             background-color: lightblue;
             display: flex;
@@ -51,20 +40,35 @@
             font-size: x-large;
             margin: 0 5px;
         }
-
     </style>
+
 </head>
 
 <body>
 <nav class="custom-navbar">
     <!-- Title -->
     <div>
-        <a class="custom-navbar-left" href="/index.jsp">
+        <a class="custom-navbar-left title" href="/ads">
             Adlister
         </a>
     </div>
+
+
     <!-- Buttons -->
     <div class="custom-navbar-right">
+        <!-- Search bar -->
+        <div class="row search-form">
+            <div class="col">
+                <form action="/SearchAd" method="post">
+                    <div class="input-group">
+                        <input class="search-box form-control" type="search" placeholder="Enter a keyword" aria-label="Search" name="search">
+                        <div class="input-group-append">
+                            <button class="search-button nav-btn btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <c:choose>
             <c:when test="${user != null}">
                 <c:if test="${not fn:contains(pageContext.request.requestURI, '/profile')}">
@@ -92,7 +96,8 @@
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
 </html>

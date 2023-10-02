@@ -63,6 +63,18 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
+    public User findById(long id) {
+        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by id", e);
+        }
+    }
+
+    @Override
     public boolean usernameExists(String username) {
         try {
             String query = "SELECT id FROM users WHERE username = ?";
@@ -73,6 +85,20 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public void update(User user) {
+        String query = "UPDATE users SET username = ?, email = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setLong(3, user.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating the user.", e);
         }
     }
 

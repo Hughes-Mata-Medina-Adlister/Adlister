@@ -3,9 +3,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
+
     <style>
 
         .card-custom {
@@ -61,6 +63,15 @@
             bottom: 5px;
         }
 
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+
         .icon {
             display: flex;
             align-items: center;
@@ -89,7 +100,9 @@
             <div class="card-custom col-md-3 col-sm-6" onclick="handleCardClick('/ad?adId=${ad.id}')">
                 <div class="card-body">
                     <p class="card-title card-header">${ad.title}</p>
+
                     <p class="card-category">${ad.category}</p>
+
                     <div class="icon">
                         <img src="https://picsum.photos/240/160?random=${ad.id}" class="icon">
                     </div>

@@ -13,3 +13,17 @@ public interface Ads {
 	Ad findById(long id);
 
 }
+
+    List<Ad> all();
+
+    Long insert(Ad ad);
+
+    Ad findById(long id);
+
+    void update(Ad ad);
+
+    void delete(long id);
+
+    List<Ad> findByTitleOrDescription(String search);
+}
+

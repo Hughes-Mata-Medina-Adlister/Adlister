@@ -12,10 +12,10 @@
 <head>
 
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Adlister" />
+        <jsp:param name="title" value="Search results" />
     </jsp:include>
 
-    <title>Main Page</title>
+    <title>Search Results</title>
 
     <style>
 
@@ -79,7 +79,6 @@
         }
     </style>
 
-
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -93,19 +92,23 @@
 </script>
 
 <div class="container">
+    <h1 class="all">Search results</h1>
 
-<%--    <div class="row d-flex justify-content-center">--%>
-<%--        <h1>Codeup Adlister Project</h1>--%>
-<%--        <div>--%>
-<%--            <h2>Specifications</h2>--%>
-<%--            <ul>--%>
-<%--                <li>Users sign up for the site with an email and password</li>--%>
-<%--                <li>Users create ads with a title and description and category.</li>--%>
-<%--                <li>Each ad is associated with the user that created it.</li>--%>
-<%--                <li>An ad can be in one or more categories (for example, "help wanted", "giveaway", or "furniture")</li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <div class="row d-flex justify-content-center">
+        <c:forEach var="ad" items="${ads}">
+            <!-- Card content -->
+            <div class="card-custom col-md-3 col-sm-6" onclick="handleCardClick('/ad?adId=${ad.id}')">
+                <div class="card-body">
+                    <p class="card-title card-header">${ad.title}</p>
+                    <div class="icon">
+                        <img src="https://picsum.photos/240/160?random=${ad.id}" class="icon">
+                    </div>
+                    <p class="card-text">${ad.description}</p>
+                </div>
+            </div>
+        </c:forEach>
+
+    </div>
 </div>
 </ul>
 </body>

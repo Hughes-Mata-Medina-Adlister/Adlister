@@ -5,6 +5,7 @@
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
 
+
     <style>
         .form-box{
             margin-top: 50px;
@@ -14,6 +15,7 @@
         }
     </style>
 
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -21,19 +23,33 @@
 <div class="container form-box">
     <h1>Please fill in your information.</h1>
     <% if (request.getAttribute("usernameTaken") != null && (boolean) request.getAttribute("usernameTaken")) { %>
+
         <div class="alert alert-danger" role="alert" id="alertMessage">
             Username is already taken! Please choose a different username.
         </div>
+
+    <div class="alert alert-danger" role="alert" id="alertMessage">
+        Username is already taken! Please choose a different username.
+    </div>
+
     <% } %>
 
     <form action="/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
+
             <input id="username" name="username" class="form-control" type="text" value="${empty requestScope.username ? '' : requestScope.username}" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input id="email" name="email" class="form-control" type="text" value="${empty requestScope.email ? '' : requestScope.email}" required>
+
+            <input id="username" name="username" class="form-control" type="text" value="${empty username ? '' : username}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" class="form-control" type="text" value="${empty email ? '' : email}">
+
         </div>
         <div class="form-group">
             <label for="password">Password</label>

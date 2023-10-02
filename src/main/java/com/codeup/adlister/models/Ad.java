@@ -63,6 +63,7 @@ public class Ad {
         this.description = description;
     }
 
+
     public String getCategory() {
         return category;
     }
@@ -72,3 +73,6 @@ public class Ad {
     }
 
 }
+
+}
+

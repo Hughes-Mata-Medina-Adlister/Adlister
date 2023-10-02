@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListAdsDao implements Ads {
@@ -48,6 +49,42 @@ public class ListAdsDao implements Ads {
         }
         return null;
     }
+
+    @Override
+    public void update(Ad ad) {
+
+        for (int i = 0; i < ads.size(); i++) {
+            if (ads.get(i).getId() == ad.getId()) {
+                ads.set(i, ad);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void delete(long id) {
+        Iterator<Ad> iterator = ads.iterator();
+        while (iterator.hasNext()) {
+            Ad ad = iterator.next();
+            if (ad.getId() == id) {
+                iterator.remove();
+                return;
+            }
+        }
+    }
+
+    @Override
+    public List<Ad> findByTitleOrDescription(String term) {
+        List<Ad> matchingAds = new ArrayList<>();
+        for (Ad ad : ads) {
+            if (ad.getTitle().toLowerCase().contains(term.toLowerCase()) ||
+                    ad.getDescription().toLowerCase().contains(term.toLowerCase())) {
+                matchingAds.add(ad);
+            }
+        }
+        return matchingAds;
+    }
+
 
     private List<Ad> generateAds() {
         return generateAds(null);
