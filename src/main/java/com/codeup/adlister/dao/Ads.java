@@ -6,6 +6,14 @@ import java.util.List;
 
 public interface Ads {
 
+	List<Ad> all();
+
+	Long insert(Ad ad);
+
+	Ad findById(long id);
+
+}
+
     List<Ad> all();
 
     Long insert(Ad ad);
@@ -18,3 +26,4 @@ public interface Ads {
 
     List<Ad> findByTitleOrDescription(String search);
 }
+

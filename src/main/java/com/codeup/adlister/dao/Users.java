@@ -9,5 +9,7 @@ public interface Users {
     boolean usernameExists(String username);
     User findById(long id);
 
+
     void update(User user);
+
 }
